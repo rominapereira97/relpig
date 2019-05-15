@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
+ <tileset firstgid="1" name="patrones" tilewidth="128" tileheight="128" tilecount="11" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="128" height="128" source="images/items/coinGold.png"/>
+  </tile>
+  <tile id="1">
+   <image width="128" height="128" source="images/tiles/boxCrate_double.png"/>
+  </tile>
+  <tile id="2">
+   <image width="128" height="128" source="images/tiles/676-75dc875226c7ffdb926bb43739a473668f4aa79b-128.png"/>
+  </tile>
+  <tile id="3">
+   <image width="128" height="128" source="images/tiles/bridgeA.png"/>
+  </tile>
+  <tile id="4">
+   <image width="128" height="128" source="images/tiles/brickBrown.png"/>
+  </tile>
+  <tile id="5">
+   <image width="128" height="128" source="images/tiles/grass.png"/>
+  </tile>
+  <tile id="6">
+   <image width="128" height="128" source="images/tiles/grass_sprout.png"/>
+  </tile>
+  <tile id="7">
+   <image width="128" height="128" source="images/tiles/grassHalf_left.png"/>
+  </tile>
+  <tile id="8">
+   <image width="128" height="128" source="images/tiles/signRight.png"/>
+  </tile>
+  <tile id="9">
+   <image width="128" height="128" source="images/tiles/spikes.png"/>
+  </tile>
+  <tile id="10">
+   <image width="128" height="128" source="images/enemies/bee.png"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="plataforma" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztUUEKwCAMK4PN7f8f9uKhSNqm1tMwkIPVpJGIHPwZrzG/CJ1FZkek8bIhnfXW0yB4/2YyS+KeyVwFk6XqodEGsztYWB2s/BH5RP1n5t6+yIvtJbuX9dE5dva3G9+ibu75GZzPDJEP4l2gRsWnA5fMAx4=
+  </data>
+ </layer>
+ <layer id="3" name="frente" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="4" name="fondo" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFQx2wI+HBCujtvsESHoPBDaNgFAwlwE4CxqUPG59cwIKEBzsAAMA3ALw=
+  </data>
+ </layer>
+ <layer id="5" name="notocar" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAf4KaT+ej2kGsvrd1LDcA1QuwcDHYPFsDNMHjTJiVuG6x+GglgpIQ9F8PgLEO4GKjjNgApBQDK
+  </data>
+ </layer>
+ <layer id="2" name="monedas" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztk80KACAIg+v9X7pLJ/HnWwVdHESk4pbMMRq/MPfxYjae1djbq/fehIui6hXlFH6rm2qpak9yHh/Vo3LQGUU81Bekn/IP4gfFg9GuUBDdN3qyOjtDCur5V3ixp5RH4W8wLEtvAFA=
+  </data>
+ </layer>
+</map>
