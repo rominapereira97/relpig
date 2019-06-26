@@ -48,12 +48,15 @@ class MyGame(arcade.Window):
         self.background_list = None
         self.dont_touch_list = None
         self.player_list = None
+        self.enemy_list = None
 
         # Separate variable that holds the player sprite
         self.player_sprite = None
 
         # Our physics engine
         self.physics_engine = None
+        self.physics__enemy_engine = None
+
 
         # Used to keep track of our scrolling
         self.view_bottom = 0
@@ -87,6 +90,7 @@ class MyGame(arcade.Window):
 
         # Create the Sprite lists
         self.player_list = arcade.SpriteList()
+        self.enemy_list = arcade.SpriteList()
         self.foreground_list = arcade.SpriteList()
         self.background_list = arcade.SpriteList()
         self.wall_list = arcade.SpriteList()
@@ -141,6 +145,46 @@ class MyGame(arcade.Window):
 
 
 
+        # ---- Draw an enemy on the groud ---- #
+
+        # Creamos el jugador
+        self.enemy_sprite = arcade.AnimatedWalkingSprite()
+
+        self.enemy_sprite.stand_right_textures = []
+        self.enemy_sprite.stand_right_textures.append(arcade.load_texture("images/enemies/pasti1.png",
+                                                                          scale=CHARACTER_SCALING,mirrored=True))
+        self.enemy_sprite.stand_left_textures = []
+        self.enemy_sprite.stand_left_textures.append(arcade.load_texture("images/enemies/pasti1.png",
+                                                                         scale=CHARACTER_SCALING))
+
+        self.enemy_sprite.walk_right_textures = []
+
+        self.enemy_sprite.walk_right_textures.append(arcade.load_texture("images/enemies/pasti1.png",
+                                                                          scale=CHARACTER_SCALING,mirrored=True))
+        self.enemy_sprite.walk_right_textures.append(arcade.load_texture("images/enemies/pasti2.png",
+                                                                          scale=CHARACTER_SCALING,mirrored=True))
+
+
+        self.enemy_sprite.walk_left_textures = []
+
+
+        self.enemy_sprite.walk_left_textures.append(arcade.load_texture("images/enemies/pasti1.png",
+                                                                         scale=CHARACTER_SCALING))
+        self.enemy_sprite.walk_left_textures.append(arcade.load_texture("images/enemies/pasti2.png",
+                                                                         scale=CHARACTER_SCALING))
+
+        self.enemy_sprite.texture_change_distance = 20
+
+
+        self.enemy_sprite.change_x = 2
+        self.enemy_sprite.boundary_left = PLAYER_START_X
+        self.enemy_sprite.boundary_right = PLAYER_START_X + 400
+
+        # Set up the enemy, specifically placing it at these coordinates.
+        self.enemy_sprite.center_x = PLAYER_START_X + 100
+        self.enemy_sprite.center_y = PLAYER_START_Y + 100
+
+        self.enemy_list.append(self.enemy_sprite)
 
 
         # --- Load in a map from the tiled editor ---
@@ -197,6 +241,9 @@ class MyGame(arcade.Window):
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player_sprite,
                                                              self.wall_list,
                                                              GRAVITY)
+        self.physics__enemy_engine = arcade.PhysicsEnginePlatformer(self.enemy_sprite,
+                                                             self.wall_list,
+                                                             GRAVITY)
 
     def on_draw(self):
         """ Render the screen. """
@@ -212,6 +259,7 @@ class MyGame(arcade.Window):
         self.dont_touch_list.draw()
         self.player_list.draw()
         self.foreground_list.draw()
+        self.enemy_list.draw()
 
         # Draw our score on the screen, scrolling it with the viewport
         score_text = f"Score: {self.score}"
@@ -245,7 +293,9 @@ class MyGame(arcade.Window):
         # example though.)
 
         self.physics_engine.update()
+        self.physics__enemy_engine.update()
         self.player_sprite.update_animation()
+        self.enemy_sprite.update_animation()
 
         # See if we hit any coins
         coin_hit_list = arcade.check_for_collision_with_list(self.player_sprite,
@@ -335,6 +385,18 @@ class MyGame(arcade.Window):
                                 SCREEN_WIDTH + self.view_left,
                                 self.view_bottom,
                                 SCREEN_HEIGHT + self.view_bottom)
+
+        # Check each enemy
+        for enemy in self.enemy_list:
+            # If the enemy hit a wall, reverse
+            if len(arcade.check_for_collision_with_list(enemy, self.wall_list)) > 0:
+                enemy.change_x *= -1
+            # If the enemy hit the left boundary, reverse
+            elif enemy.boundary_left is not None and enemy.left < enemy.boundary_left:
+                enemy.change_x *= -1
+            # If the enemy hit the right boundary, reverse
+            elif enemy.boundary_right is not None and enemy.right > enemy.boundary_right:
+                enemy.change_x *= -1
 
 
 def main():
