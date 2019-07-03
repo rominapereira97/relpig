@@ -64,6 +64,7 @@ class MyGame(arcade.Window):
         # Keep track of the score
         self.score = 0
         self.vida= 3
+        self.cientifico=25
 
         # Where is the right edge of the map?
         self.end_of_map = 0
@@ -74,7 +75,7 @@ class MyGame(arcade.Window):
         # Load sounds
         self.collect_coin_sound = arcade.load_sound("sounds/coin1.wav")
         self.jump_sound = arcade.load_sound("sounds/jump1.wav")
-        self.game_over = arcade.load_sound("sounds/gameover1.wav")
+        self.game_over = arcade.load_sound("sounds/gameover2.wav")
 
     def setup(self, level):
         """ Set up the game here. Call this function to restart the game. """
@@ -86,6 +87,7 @@ class MyGame(arcade.Window):
         # Keep track of the score
         self.score = 0
         self.vida= 3
+        self.cientifico=25
 
         # Create the Sprite lists
         self.player_list = arcade.SpriteList()
