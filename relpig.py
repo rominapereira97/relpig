@@ -171,14 +171,15 @@ class MyGame(arcade.Window):
 
         self.enemy_sprite.texture_change_distance = 20
 
-
-        self.enemy_sprite.change_x = 2
-        self.enemy_sprite.boundary_left = PLAYER_START_X
-        self.enemy_sprite.boundary_right = PLAYER_START_X + 400
-
-        # Set up the enemy, specifically placing it at these coordinates.
+       # Posicion inicial del enemigo
         self.enemy_sprite.center_x = PLAYER_START_X + 240
         self.enemy_sprite.center_y = PLAYER_START_Y + 100
+
+        # Limite del enemigo
+        self.enemy_sprite.change_x = 2
+        self.enemy_sprite.boundary_left = PLAYER_START_X + 70
+        self.enemy_sprite.boundary_right = PLAYER_START_X + 400
+
 
         self.enemy_list.append(self.enemy_sprite)
 
