@@ -57,19 +57,19 @@ class MyGame(arcade.Window):
         self.physics_engine = None
         self.physics__enemy_engine = None
 
-
         # Used to keep track of our scrolling
         self.view_bottom = 0
         self.view_left = 0
 
         # Keep track of the score
         self.score = 0
+        self.vida= 3
 
         # Where is the right edge of the map?
         self.end_of_map = 0
 
         # Level
-        self.level = 1
+        self.level = 3
 
         # Load sounds
         self.collect_coin_sound = arcade.load_sound("sounds/coin1.wav")
@@ -85,8 +85,7 @@ class MyGame(arcade.Window):
 
         # Keep track of the score
         self.score = 0
-
-
+        self.vida= 3
 
         # Create the Sprite lists
         self.player_list = arcade.SpriteList()
@@ -142,9 +141,6 @@ class MyGame(arcade.Window):
 
         self.player_list.append(self.player_sprite)
 
-
-
-
         # ---- Draw an enemy on the groud ---- #
 
         # Creamos el jugador
@@ -181,7 +177,7 @@ class MyGame(arcade.Window):
         self.enemy_sprite.boundary_right = PLAYER_START_X + 400
 
         # Set up the enemy, specifically placing it at these coordinates.
-        self.enemy_sprite.center_x = PLAYER_START_X + 100
+        self.enemy_sprite.center_x = PLAYER_START_X + 240
         self.enemy_sprite.center_y = PLAYER_START_Y + 100
 
         self.enemy_list.append(self.enemy_sprite)
@@ -201,7 +197,7 @@ class MyGame(arcade.Window):
         dont_touch_layer_name = "notocar"
 
         # Map name
-        map_name = f"mapa{level}.tmx"
+        map_name = f"mapa2.tmx"
         # Read in the tiled map
         my_map = arcade.read_tiled_map(map_name, TILE_SCALING)
 
@@ -263,11 +259,17 @@ class MyGame(arcade.Window):
 
         # Draw our score on the screen, scrolling it with the viewport
         score_text = f"Score: {self.score}"
-        arcade.draw_text(score_text, 10 + self.view_left, 10 + self.view_bottom,
-                         arcade.csscolor.BLACK, 18)
+        arcade.draw_text(score_text, 20 + self.view_left, self.view_bottom + SCREEN_HEIGHT -40 ,
+                         arcade.csscolor.WHITE, 18)
+
+        # Draw our score on the screen, scrolling it with the viewport
+        vida_text = f"Vidas: {self.vida}"
+        arcade.draw_text(vida_text, 20 + self.view_left, self.view_bottom + SCREEN_HEIGHT - 20,
+                         arcade.csscolor.WHITE, 18)
 
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed. """
+
 
         if key == arcade.key.UP or key == arcade.key.W:
             if self.physics_engine.can_jump():
@@ -335,7 +337,14 @@ class MyGame(arcade.Window):
             changed_viewport = True
             arcade.play_sound(self.game_over)
 
-        # See if the user got to the end of the level
+        # Cuando el jugador se choca con un enemigo.
+        enemy_hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.enemy_list)
+        for enemy in enemy_hit_list:
+            arcade.play_sound(self.game_over)
+            enemy.remove_from_sprite_lists()
+            self.vida -= 1
+
+        # Cuando el jugador cambia de nivel.
         if self.player_sprite.center_x >= self.end_of_map:
             # Advance to the next level
             self.level += 1

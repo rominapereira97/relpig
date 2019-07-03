@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="5" nextobjectid="1">
+ <tileset firstgid="1" name="fondo" tilewidth="1853" tileheight="1482" tilecount="22" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="1853" height="1482" source="images/FONDO 3.png"/>
+  </tile>
+  <tile id="1">
+   <image width="128" height="128" source="images/tiles/spikes.png"/>
+  </tile>
+  <tile id="2">
+   <image width="128" height="128" source="images/tiles/stone.png"/>
+  </tile>
+  <tile id="3">
+   <image width="128" height="128" source="images/tiles/stoneCenter.png"/>
+  </tile>
+  <tile id="4">
+   <image width="128" height="128" source="images/tiles/stoneCenter_rounded.png"/>
+  </tile>
+  <tile id="5">
+   <image width="128" height="128" source="images/tiles/stoneCliff_left.png"/>
+  </tile>
+  <tile id="6">
+   <image width="128" height="128" source="images/tiles/stoneCliff_right.png"/>
+  </tile>
+  <tile id="7">
+   <image width="128" height="128" source="images/tiles/stoneCliffAlt_left.png"/>
+  </tile>
+  <tile id="8">
+   <image width="128" height="128" source="images/tiles/stoneCliffAlt_right.png"/>
+  </tile>
+  <tile id="9">
+   <image width="128" height="128" source="images/tiles/stoneCorner_left.png"/>
+  </tile>
+  <tile id="10">
+   <image width="128" height="128" source="images/tiles/stoneCorner_right.png"/>
+  </tile>
+  <tile id="11">
+   <image width="128" height="128" source="images/tiles/stoneHalf.png"/>
+  </tile>
+  <tile id="12">
+   <image width="128" height="128" source="images/tiles/stoneHalf_left.png"/>
+  </tile>
+  <tile id="13">
+   <image width="128" height="128" source="images/tiles/stoneHalf_mid.png"/>
+  </tile>
+  <tile id="14">
+   <image width="128" height="128" source="images/tiles/stoneHalf_right.png"/>
+  </tile>
+  <tile id="15">
+   <image width="128" height="128" source="images/tiles/stoneHill_left.png"/>
+  </tile>
+  <tile id="16">
+   <image width="128" height="128" source="images/tiles/stoneHill_right.png"/>
+  </tile>
+  <tile id="17">
+   <image width="128" height="128" source="images/tiles/stoneLeft.png"/>
+  </tile>
+  <tile id="18">
+   <image width="128" height="128" source="images/tiles/stoneMid.png"/>
+  </tile>
+  <tile id="19">
+   <image width="128" height="128" source="images/tiles/stoneRight.png"/>
+  </tile>
+  <tile id="20">
+   <image width="128" height="128" source="images/tiles/switchGreen.png"/>
+  </tile>
+  <tile id="21">
+   <image width="128" height="128" source="images/items/coinGold.png"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="plataforma" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDHbAgYSHCuBgwO1uavuDDYf9IxkwkqBWEIiZgFgYqo8Jj1pkOWYcmA2PHDJmgWJi1IxiwhgAi0oB9w==
+  </data>
+ </layer>
+ <layer id="2" name="no tocar" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIKhDdiAmBmK2QfYLciAA4hZgJhzoB0yCkYEAABzyAAp
+  </data>
+ </layer>
+ <layer id="4" name="fondo" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="3" name="monedas" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALaADEsmBy9xKjDxSfFLkJqsPFJ8Rs2Nch6sdmBLo8rPAmFMznhQoy5o2DwAADBSAOH
+  </data>
+ </layer>
+</map>
