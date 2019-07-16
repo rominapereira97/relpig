@@ -3,7 +3,8 @@ Platformer Game
 """
 import arcade
 
-# Constants
+
+# constantes
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 650
 SCREEN_TITLE = "Platformer"
@@ -18,7 +19,7 @@ GRID_PIXEL_SIZE = (SPRITE_PIXEL_SIZE * TILE_SCALING)
 # Movement speed of player, in pixels per frame
 PLAYER_MOVEMENT_SPEED = 5
 GRAVITY = 1
-PLAYER_JUMP_SPEED = 20
+PLAYER_JUMP_SPEED = 45
 
 # How many pixels to keep as a minimum margin between the character
 # and the edge of the screen.
@@ -28,7 +29,7 @@ BOTTOM_VIEWPORT_MARGIN = 150
 TOP_VIEWPORT_MARGIN = 100
 
 PLAYER_START_X = 64
-PLAYER_START_Y = 94
+PLAYER_START_Y = 218
 
 class MyGame(arcade.Window):
     """
@@ -64,9 +65,10 @@ class MyGame(arcade.Window):
         # Keep track of the score
         self.score = 0
         self.vida= 3
+
         self.cientifico=25
 
-        # Where is the right edge of the map?
+        # donde esta el borde derecho del mapa?
         self.end_of_map = 0
 
         # Level
@@ -135,6 +137,7 @@ class MyGame(arcade.Window):
                                                                          scale=CHARACTER_SCALING, mirrored=True))
 
         self.player_sprite.texture_change_distance = 20
+
 
         # Set up the player, specifically placing it at these coordinates.
         #self.player_sprite = arcade.Sprite("images/player_1/protagonista1.png", CHARACTER_SCALING)
@@ -302,6 +305,7 @@ class MyGame(arcade.Window):
         self.player_sprite.update_animation()
         self.enemy_sprite.update_animation()
 
+
         # See if we hit any coins
         coin_hit_list = arcade.check_for_collision_with_list(self.player_sprite,
                                                              self.coin_list)
@@ -344,8 +348,15 @@ class MyGame(arcade.Window):
         enemy_hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.enemy_list)
         for enemy in enemy_hit_list:
             arcade.play_sound(self.game_over)
-            enemy.remove_from_sprite_lists()
+            self.player_sprite.center_x = PLAYER_START_X
+            self.player_sprite.center_y = PLAYER_START_Y
+            '''enemy.remove_from_sprite_lists()'''
+
             self.vida -= 1
+
+            if self.vida == 0:
+                print('game over')
+
 
         # Cuando el jugador cambia de nivel.
         if self.player_sprite.center_x >= self.end_of_map:
