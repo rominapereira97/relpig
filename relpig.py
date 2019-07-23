@@ -204,6 +204,9 @@ class MyGame(arcade.Window):
         dont_touch_layer_name = "notocar"
 
         # Map name
+
+        if level==-1:
+            map_name = 'game over.tmx'
         map_name = f"mapa2.tmx"
         # Read in the tiled map
         my_map = arcade.read_tiled_map(map_name, TILE_SCALING)
@@ -355,8 +358,9 @@ class MyGame(arcade.Window):
 
             self.vida -= 1
 
-            if self.vida == 0:
-                print('game over')
+            if self.vida == -1:
+                self.level = -1
+                self.setup(self.level)
 
 
         # Cuando el jugador cambia de nivel.
