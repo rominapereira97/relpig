@@ -75,6 +75,7 @@ class MyGame(arcade.Window):
         # Level
         self.level = 3
 
+
         # Load sounds
         self.collect_coin_sound = arcade.load_sound("sounds/coin1.wav")
         self.jump_sound = arcade.load_sound("sounds/jump1.wav")
