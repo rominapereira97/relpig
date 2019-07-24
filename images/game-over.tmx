@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
+ <tileset firstgid="1" name="patrones" tilewidth="640" tileheight="360" tilecount="5" columns="25" backgroundcolor="#6c2433">
+  <grid orientation="orthogonal" width="25" height="25"/>
+  <tile id="0">
+   <image width="128" height="128" source="items/star.png"/>
+  </tile>
+  <tile id="1">
+   <image width="128" height="128" source="tiles/plantPurple.png"/>
+  </tile>
+  <tile id="2">
+   <image width="128" height="128" source="tiles/rock.png"/>
+  </tile>
+  <tile id="3">
+   <image width="128" height="128" source="player_1/protagonistaf.png"/>
+  </tile>
+  <tile id="4">
+   <image width="640" height="360" source="items/Download-Winner-PNG-File.png"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="plataforma" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="2" name="monetas" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="3" name="no tocar" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjAIIYB1oB4yCUTAKyAYAGpAABg==
+  </data>
+ </layer>
+ <layer id="4" name="frente" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="5" name="fondo" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+</map>
