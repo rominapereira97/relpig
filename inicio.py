@@ -3,24 +3,22 @@ Platformer Game
 """
 import arcade
 
-
-# constantes
-SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 650
+# Constants
+SCREEN_WIDTH = 1024
+SCREEN_HEIGHT = 768
 SCREEN_TITLE = "Platformer"
 
 # Constants used to scale our sprites from their original size
-CHARACTER_SCALING = 0.5
+CHARACTER_SCALING = 1
 TILE_SCALING = 0.5
 COIN_SCALING = 0.5
 SPRITE_PIXEL_SIZE = 128
 GRID_PIXEL_SIZE = (SPRITE_PIXEL_SIZE * TILE_SCALING)
 
-
 # Movement speed of player, in pixels per frame
 PLAYER_MOVEMENT_SPEED = 5
 GRAVITY = 1
-PLAYER_JUMP_SPEED = 45
+PLAYER_JUMP_SPEED = 20
 
 # How many pixels to keep as a minimum margin between the character
 # and the edge of the screen.
@@ -29,8 +27,8 @@ RIGHT_VIEWPORT_MARGIN = 200
 BOTTOM_VIEWPORT_MARGIN = 150
 TOP_VIEWPORT_MARGIN = 100
 
-PLAYER_START_X = 64
-PLAYER_START_Y = 218
+PLAYER_START_X = 10
+PLAYER_START_Y = 10
 
 class MyGame(arcade.Window):
     """
@@ -50,14 +48,12 @@ class MyGame(arcade.Window):
         self.background_list = None
         self.dont_touch_list = None
         self.player_list = None
-        self.enemy_list = None
 
         # Separate variable that holds the player sprite
         self.player_sprite = None
 
         # Our physics engine
         self.physics_engine = None
-        self.physics__enemy_engine = None
 
         # Used to keep track of our scrolling
         self.view_bottom = 0
@@ -65,26 +61,22 @@ class MyGame(arcade.Window):
 
         # Keep track of the score
         self.score = 0
-        self.vida= 3
 
-        self.cientifico=25
-
-        # donde esta el borde derecho del mapa?
+        # Where is the right edge of the map?
         self.end_of_map = 0
 
         # Level
-        self.level = 3
+        self.level = 1
 
         # Load sounds
         self.collect_coin_sound = arcade.load_sound("sounds/coin1.wav")
         self.jump_sound = arcade.load_sound("sounds/jump1.wav")
-        self.game_over = arcade.load_sound("sounds/gameover2.wav")
+        self.game_over = arcade.load_sound("sounds/gameover1.wav")
 
     def setup(self, level):
         """ Set up the game here. Call this function to restart the game. """
 
-        self.winner = arcade.load_texture("images/winner.png")
-
+        self.background = arcade.load_texture("images/fondo.png")
 
         # Used to keep track of our scrolling
         self.view_bottom = 0
@@ -92,106 +84,19 @@ class MyGame(arcade.Window):
 
         # Keep track of the score
         self.score = 0
-        self.vida= 3
-        self.cientifico=25
 
         # Create the Sprite lists
         self.player_list = arcade.SpriteList()
-        self.enemy_list = arcade.SpriteList()
         self.foreground_list = arcade.SpriteList()
         self.background_list = arcade.SpriteList()
         self.wall_list = arcade.SpriteList()
         self.coin_list = arcade.SpriteList()
 
-        #Creamos el jugador
-        self.player_sprite = arcade.AnimatedWalkingSprite()
-
-        self.player_sprite.stand_right_textures = []
-        self.player_sprite.stand_right_textures.append(arcade.load_texture("images/player_1/protagonista1.png",
-                                                                    scale=CHARACTER_SCALING))
-        self.player_sprite.stand_left_textures = []
-        self.player_sprite.stand_left_textures.append(arcade.load_texture("images/player_1/protagonista1.png",
-                                                                   scale=CHARACTER_SCALING, mirrored=True))
-
-        self.player_sprite.walk_right_textures = []
-
-        self.player_sprite.walk_right_textures.append(arcade.load_texture("images/player_1/protagonista3.png",
-                                                                   scale=CHARACTER_SCALING))
-        self.player_sprite.walk_right_textures.append(arcade.load_texture("images/player_1/protagonista4.png",
-                                                                   scale=CHARACTER_SCALING))
-        #self.player_sprite.walk_right_textures.append(arcade.load_texture("images/player_1/protagonista3.png",
-        #                                                           scale=CHARACTER_SCALING))
-        #self.player_sprite.walk_right_textures.append(arcade.load_texture("images/player_1/protagonista4.png",
-        #                                                           scale=CHARACTER_SCALING))
-
-        self.player_sprite.walk_left_textures = []
-
-        #self.player_sprite.walk_left_textures.append(arcade.load_texture("images/player_1/protagonista1.png",
-        #                                                          scale=CHARACTER_SCALING, mirrored=True))
-        #self.player_sprite.walk_left_textures.append(arcade.load_texture("images/player_1/protagonista2.png",
-        #                                                          scale=CHARACTER_SCALING, mirrored=True))
-        self.player_sprite.walk_left_textures.append(arcade.load_texture("images/player_1/protagonista3.png",
-                                                                  scale=CHARACTER_SCALING, mirrored=True))
-        self.player_sprite.walk_left_textures.append(arcade.load_texture("images/player_1/protagonista4.png",
-                                                                  scale=CHARACTER_SCALING, mirrored=True))
-
-        self.player_sprite.walk_up_textures = []
-
-        self.player_sprite.walk_up_textures.append(arcade.load_texture("images/player_1/protagonista5.png",
-                                                                         scale=CHARACTER_SCALING, mirrored=True))
-
-        self.player_sprite.texture_change_distance = 20
-
-
         # Set up the player, specifically placing it at these coordinates.
-        #self.player_sprite = arcade.Sprite("images/player_1/protagonista1.png", CHARACTER_SCALING)
+        self.player_sprite = arcade.Sprite("images/player_1/player_stand.png", CHARACTER_SCALING)
         self.player_sprite.center_x = PLAYER_START_X
         self.player_sprite.center_y = PLAYER_START_Y
-
         self.player_list.append(self.player_sprite)
-
-        # ---- Draw an enemy on the groud ---- #
-
-        # Creamos el jugador
-        self.enemy_sprite = arcade.AnimatedWalkingSprite()
-
-        self.enemy_sprite.stand_right_textures = []
-        self.enemy_sprite.stand_right_textures.append(arcade.load_texture("images/enemies/pasti1.png",
-                                                                          scale=CHARACTER_SCALING,mirrored=True))
-        self.enemy_sprite.stand_left_textures = []
-        self.enemy_sprite.stand_left_textures.append(arcade.load_texture("images/enemies/pasti1.png",
-                                                                         scale=CHARACTER_SCALING))
-
-        self.enemy_sprite.walk_right_textures = []
-
-        self.enemy_sprite.walk_right_textures.append(arcade.load_texture("images/enemies/pasti1.png",
-                                                                          scale=CHARACTER_SCALING,mirrored=True))
-        self.enemy_sprite.walk_right_textures.append(arcade.load_texture("images/enemies/pasti2.png",
-                                                                          scale=CHARACTER_SCALING,mirrored=True))
-
-
-        self.enemy_sprite.walk_left_textures = []
-
-
-        self.enemy_sprite.walk_left_textures.append(arcade.load_texture("images/enemies/pasti1.png",
-                                                                         scale=CHARACTER_SCALING))
-        self.enemy_sprite.walk_left_textures.append(arcade.load_texture("images/enemies/pasti2.png",
-                                                                         scale=CHARACTER_SCALING))
-
-        self.enemy_sprite.texture_change_distance = 20
-
-       # Posicion inicial del enemigo
-        self.enemy_sprite.center_x = PLAYER_START_X + 240
-        self.enemy_sprite.center_y = PLAYER_START_Y + 100
-
-        # Limite del enemigo
-        self.enemy_sprite.change_x = 2
-        self.enemy_sprite.boundary_left = PLAYER_START_X + 70
-        self.enemy_sprite.boundary_right = PLAYER_START_X + 400
-
-
-        self.enemy_list.append(self.enemy_sprite)
-
 
         # --- Load in a map from the tiled editor ---
 
@@ -204,13 +109,10 @@ class MyGame(arcade.Window):
         # Name of the layer that has items for background
         background_layer_name = 'fondo'
         # Name of the layer that has items we shouldn't touch
-        dont_touch_layer_name = "notocar"
+        dont_touch_layer_name = "no tocar"
 
         # Map name
-
-        if level==-1:
-            map_name = 'game over.tmx'
-        map_name = f"mapa2.tmx"
+        map_name = f"nivel_1.tmx"
         # Read in the tiled map
         my_map = arcade.read_tiled_map(map_name, TILE_SCALING)
 
@@ -250,9 +152,6 @@ class MyGame(arcade.Window):
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player_sprite,
                                                              self.wall_list,
                                                              GRAVITY)
-        self.physics__enemy_engine = arcade.PhysicsEnginePlatformer(self.enemy_sprite,
-                                                             self.wall_list,
-                                                             GRAVITY)
 
     def on_draw(self):
         """ Render the screen. """
@@ -260,11 +159,8 @@ class MyGame(arcade.Window):
         # Clear the screen to the background color
         arcade.start_render()
 
-        if self.level==7:
-            arcade.draw_texture_winner(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
-                                     SCREEN_WIDTH, SCREEN_HEIGHT, self.winner)
-
-
+        arcade.draw_texture_rectangle(self.view_left + SCREEN_WIDTH / 2, self.view_bottom + SCREEN_HEIGHT / 2,
+                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
         # Draw our sprites
         self.wall_list.draw()
         self.background_list.draw()
@@ -273,21 +169,14 @@ class MyGame(arcade.Window):
         self.dont_touch_list.draw()
         self.player_list.draw()
         self.foreground_list.draw()
-        self.enemy_list.draw()
 
         # Draw our score on the screen, scrolling it with the viewport
         score_text = f"Score: {self.score}"
-        arcade.draw_text(score_text, 20 + self.view_left, self.view_bottom + SCREEN_HEIGHT -40 ,
-                         arcade.csscolor.WHITE, 18)
-
-        # Draw our score on the screen, scrolling it with the viewport
-        vida_text = f"Vidas: {self.vida}"
-        arcade.draw_text(vida_text, 20 + self.view_left, self.view_bottom + SCREEN_HEIGHT - 20,
-                         arcade.csscolor.WHITE, 18)
+        arcade.draw_text(score_text, 10 + self.view_left, 10 + self.view_bottom,
+                         arcade.csscolor.BLACK, 18)
 
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed. """
-
 
         if key == arcade.key.UP or key == arcade.key.W:
             if self.physics_engine.can_jump():
@@ -311,12 +200,7 @@ class MyGame(arcade.Window):
 
         # Call update on all sprites (The sprites don't do much in this
         # example though.)
-
         self.physics_engine.update()
-        self.physics__enemy_engine.update()
-        self.player_sprite.update_animation()
-        self.enemy_sprite.update_animation()
-
 
         # See if we hit any coins
         coin_hit_list = arcade.check_for_collision_with_list(self.player_sprite,
@@ -356,23 +240,9 @@ class MyGame(arcade.Window):
             changed_viewport = True
             arcade.play_sound(self.game_over)
 
-        # Cuando el jugador se choca con un enemigo.
-        enemy_hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.enemy_list)
-        for enemy in enemy_hit_list:
-            arcade.play_sound(self.game_over)
-            self.player_sprite.center_x = PLAYER_START_X
-            self.player_sprite.center_y = PLAYER_START_Y
-            '''enemy.remove_from_sprite_lists()'''
-
-            self.vida -= 1
-
-            if self.vida == -1:
-                self.level = -1
-                self.setup(self.level)
-
-
-        # Cuando el jugador cambia de nivel.
+        # See if the user got to the end of the level
         if self.player_sprite.center_x >= self.end_of_map:
+            print("ADVANCE ****")
             # Advance to the next level
             self.level += 1
 
@@ -383,6 +253,7 @@ class MyGame(arcade.Window):
             self.view_left = 0
             self.view_bottom = 0
             changed_viewport = True
+
 
         # --- Manage Scrolling ---
 
@@ -421,18 +292,6 @@ class MyGame(arcade.Window):
                                 SCREEN_WIDTH + self.view_left,
                                 self.view_bottom,
                                 SCREEN_HEIGHT + self.view_bottom)
-
-        # Check each enemy
-        for enemy in self.enemy_list:
-            # If the enemy hit a wall, reverse
-            if len(arcade.check_for_collision_with_list(enemy, self.wall_list)) > 0:
-                enemy.change_x *= -1
-            # If the enemy hit the left boundary, reverse
-            elif enemy.boundary_left is not None and enemy.left < enemy.boundary_left:
-                enemy.change_x *= -1
-            # If the enemy hit the right boundary, reverse
-            elif enemy.boundary_right is not None and enemy.right > enemy.boundary_right:
-                enemy.change_x *= -1
 
 
 def main():
