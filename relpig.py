@@ -301,7 +301,6 @@ class MyGame(arcade.Window):
             self.setup(1)
 
 
-
         if key == arcade.key.UP or key == arcade.key.W:
             if self.physics_engine.can_jump():
                 self.player_sprite.change_y = PLAYER_JUMP_SPEED
