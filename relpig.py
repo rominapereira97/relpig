@@ -270,6 +270,7 @@ class MyGame(arcade.Window):
                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.winner)
 
 
+
         # Draw our sprites
         self.wall_list.draw()
         self.background_list.draw()
