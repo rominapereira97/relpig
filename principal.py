@@ -73,6 +73,7 @@ class MyGame(arcade.Window):
         self.jump_sound = arcade.load_sound("sounds/jump1.wav")
         self.game_over = arcade.load_sound("sounds/gameover1.wav")
 
+
     def setup(self, level):
         """ Set up the game here. Call this function to restart the game. """
 
