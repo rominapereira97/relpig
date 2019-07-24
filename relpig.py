@@ -85,6 +85,7 @@ class MyGame(arcade.Window):
         """ Set up the game here. Call this function to restart the game. """
 
         self.winner = arcade.load_texture("images/winner.png")
+        self.gameover = arcade.load_texture("images/game_over.png")
 
         self.background = arcade.load_texture("images/fondo1.png")
 
@@ -96,7 +97,6 @@ class MyGame(arcade.Window):
         # Keep track of the score
         self.score = 0
         self.vida= 3
-        self.cientifico=25
 
         # Create the Sprite lists
         self.player_list = arcade.SpriteList()
@@ -266,20 +266,23 @@ class MyGame(arcade.Window):
         arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
                                       SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
         if self.level==7:
-            arcade.draw_texture_winner(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
+            arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.winner)
 
+        elif self.vida==-1:
+            arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
+                                     SCREEN_WIDTH, SCREEN_HEIGHT, self.gameover)
 
-
-        # Draw our sprites
-        self.wall_list.draw()
-        self.background_list.draw()
-        self.wall_list.draw()
-        self.coin_list.draw()
-        self.dont_touch_list.draw()
-        self.player_list.draw()
-        self.foreground_list.draw()
-        self.enemy_list.draw()
+        else:
+         # Draw our sprites
+         self.wall_list.draw()
+         self.background_list.draw()
+         self.wall_list.draw()
+         self.coin_list.draw()
+         self.dont_touch_list.draw()
+         self.player_list.draw()
+         self.foreground_list.draw()
+         self.enemy_list.draw()
 
         # Draw our score on the screen, scrolling it with the viewport
         score_text = f"Score: {self.score}"
@@ -293,6 +296,10 @@ class MyGame(arcade.Window):
 
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed. """
+        if self.vida<0:
+            self.level=1
+            self.setup(1)
+
 
 
         if key == arcade.key.UP or key == arcade.key.W:
@@ -374,7 +381,6 @@ class MyGame(arcade.Window):
 
             if self.vida == -1:
                 self.level = -1
-                self.setup(self.level)
 
 
         # Cuando el jugador cambia de nivel.
