@@ -85,6 +85,7 @@ class MyGame(arcade.Window):
 
         self.wuinner = arcade.load_texture("images/winner.jpg")
 
+
         # Used to keep track of our scrolling
         self.view_bottom = 0
         self.view_left = 0
