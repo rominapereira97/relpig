@@ -4,8 +4,8 @@ Platformer Game
 import arcade
 
 # Constants
-SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 650
+SCREEN_WIDTH = 1024
+SCREEN_HEIGHT = 768
 SCREEN_TITLE = "Platformer"
 
 # Constants used to scale our sprites from their original size
@@ -27,8 +27,8 @@ RIGHT_VIEWPORT_MARGIN = 200
 BOTTOM_VIEWPORT_MARGIN = 150
 TOP_VIEWPORT_MARGIN = 100
 
-PLAYER_START_X = 64
-PLAYER_START_Y = 94
+PLAYER_START_X = 10
+PLAYER_START_Y = 10
 
 class MyGame(arcade.Window):
     """
@@ -73,8 +73,11 @@ class MyGame(arcade.Window):
         self.jump_sound = arcade.load_sound("sounds/jump1.wav")
         self.game_over = arcade.load_sound("sounds/gameover1.wav")
 
+
     def setup(self, level):
         """ Set up the game here. Call this function to restart the game. """
+
+        self.background = arcade.load_texture("images/FONDO 3.png")
 
         # Used to keep track of our scrolling
         self.view_bottom = 0
@@ -107,10 +110,10 @@ class MyGame(arcade.Window):
         # Name of the layer that has items for background
         background_layer_name = 'fondo'
         # Name of the layer that has items we shouldn't touch
-        dont_touch_layer_name = "notocar"
+        dont_touch_layer_name = "no tocar"
 
         # Map name
-        map_name = f"mapa{level}.tmx"
+        map_name = f"nivel_1.tmx"
         # Read in the tiled map
         my_map = arcade.read_tiled_map(map_name, TILE_SCALING)
 
@@ -157,6 +160,8 @@ class MyGame(arcade.Window):
         # Clear the screen to the background color
         arcade.start_render()
 
+        arcade.draw_texture_rectangle(self.view_left + SCREEN_WIDTH / 2, self.view_bottom + SCREEN_HEIGHT / 2,
+                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
         # Draw our sprites
         self.wall_list.draw()
         self.background_list.draw()
@@ -238,6 +243,7 @@ class MyGame(arcade.Window):
 
         # See if the user got to the end of the level
         if self.player_sprite.center_x >= self.end_of_map:
+            print("ADVANCE ****")
             # Advance to the next level
             self.level += 1
 
@@ -248,6 +254,7 @@ class MyGame(arcade.Window):
             self.view_left = 0
             self.view_bottom = 0
             changed_viewport = True
+
 
         # --- Manage Scrolling ---
 
