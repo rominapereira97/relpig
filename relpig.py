@@ -83,7 +83,7 @@ class MyGame(arcade.Window):
     def setup(self, level):
         """ Set up the game here. Call this function to restart the game. """
 
-        self.wuinner = arcade.load_texture("images/winner.jpg")
+        self.winner = arcade.load_texture("images/winner.png")
 
 
         # Used to keep track of our scrolling
@@ -260,8 +260,8 @@ class MyGame(arcade.Window):
         # Clear the screen to the background color
         arcade.start_render()
 
-    if self.level==7:
-       arcade.draw_texture_winner(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
+        if self.level==7:
+            arcade.draw_texture_winner(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.winner)
 
 
