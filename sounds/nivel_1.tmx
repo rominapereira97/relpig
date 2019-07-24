@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
+ <tileset firstgid="1" name="mispatrones" tilewidth="128" tileheight="128" tilecount="17" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="15">
+   <image width="128" height="128" source="images/tiles/stoneLeft.png"/>
+  </tile>
+  <tile id="16">
+   <image width="128" height="128" source="images/tiles/stoneMid.png"/>
+  </tile>
+  <tile id="17">
+   <image width="128" height="128" source="images/tiles/stoneRight.png"/>
+  </tile>
+  <tile id="18">
+   <image width="128" height="128" source="images/tiles/stone.png"/>
+  </tile>
+  <tile id="19">
+   <image width="128" height="128" source="images/tiles/stoneHalf.png"/>
+  </tile>
+  <tile id="20">
+   <image width="128" height="128" source="images/tiles/stoneHalf_left.png"/>
+  </tile>
+  <tile id="21">
+   <image width="128" height="128" source="images/tiles/stoneHalf_mid.png"/>
+  </tile>
+  <tile id="22">
+   <image width="128" height="128" source="images/tiles/water.png"/>
+  </tile>
+  <tile id="23">
+   <image width="128" height="128" source="images/tiles/waterTop_high.png"/>
+  </tile>
+  <tile id="24">
+   <image width="128" height="128" source="images/tiles/brickGrey.png"/>
+  </tile>
+  <tile id="25">
+   <image width="128" height="128" source="images/tiles/dirtCorner_left.png"/>
+  </tile>
+  <tile id="26">
+   <image width="128" height="128" source="images/tiles/dirtHill_left.png"/>
+  </tile>
+  <tile id="27">
+   <image width="128" height="128" source="images/tiles/dirtCorner_right.png"/>
+  </tile>
+  <tile id="28">
+   <image width="128" height="128" source="images/tiles/dirtHill_right.png"/>
+  </tile>
+  <tile id="29">
+   <image width="128" height="128" source="images/tiles/dirtCenter.png"/>
+  </tile>
+  <tile id="30">
+   <image width="128" height="128" source="images/tiles/ladderMid.png"/>
+  </tile>
+  <tile id="31">
+   <image width="94" height="114" source="images/items/pluma.png"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="monedas" width="25" height="20" opacity="0.99">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAOUEDCtFA/nIECA2ZYKGDBIxUoMBAOAwU8eCAAPdxCDzuwAXki1Skg0QoMpLmNFnagyxNrBykAn/0DDRSwYHrYMwroBwDKeQde
+  </data>
+ </layer>
+ <layer id="2" name="frente" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="3" name="fondo" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFowA7kCdTnyyN7QCZL0NDO2Dmy5GojxzzaWEHuvm47KAkftHNp6YduMwHYWky7UBWg898EJbCYQ+xdhAyn1J7iAX0sIee/hkFhAEAAdcHyQ==
+  </data>
+ </layer>
+ <layer id="4" name="no tocar" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="5" name="plataforma" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg6QAwJkyJHbyCJAw+UHWIM2MMHXXwwhN1AAWLCAFeYUzN+6WUHpe6hph3yJKgl1w5yAT3yMrFAAIiFScDkAELpjxrhQKodxPhVCIglkLA4iZhYt5BqLr3tAADisw/X
+  </data>
+ </layer>
+</map>

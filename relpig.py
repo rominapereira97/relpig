@@ -86,7 +86,7 @@ class MyGame(arcade.Window):
 
         self.winner = arcade.load_texture("images/winner.png")
 
-        self.background = arcade.load_texture("images/FONDO 3.png")
+        self.background = arcade.load_texture("images/fondo1.png")
 
 
         # Used to keep track of our scrolling
@@ -213,7 +213,7 @@ class MyGame(arcade.Window):
 
         if level==-1:
             map_name = 'game over.tmx'
-        map_name = f"mapa2.tmx"
+        map_name = f"nivel_1.tmx"
         # Read in the tiled map
         my_map = arcade.read_tiled_map(map_name, TILE_SCALING)
 

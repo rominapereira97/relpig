@@ -54,7 +54,7 @@
    <image width="94" height="114" source="images/items/pluma.png"/>
   </tile>
  </tileset>
- <layer id="1" name="monedas" width="25" height="20">
+ <layer id="1" name="monedas" width="25" height="20" opacity="0.99">
   <data encoding="base64" compression="zlib">
    eJxjYKAOUEDCtFA/nIECA2ZYKGDBIxUoMBAOAwU8eCAAPdxCDzuwAXki1Skg0QoMpLmNFnagyxNrBykAn/0DDRSwYHrYMwroBwDKeQde
   </data>
@@ -76,7 +76,7 @@
  </layer>
  <layer id="5" name="plataforma" width="25" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBg6QAwJkyJHbyCJAw+UHWIM2MMHXXwwhN1AAWLCAFeYUzN+6WUHpe4ZanaQCwZTXhYAYmESMDXdQs1wINUOYvwqBMQSSFicREysW0g1l952AAC4BBDk
+   eJxjYBg6QAwJkyJHbyCJAw+UHWIM2MMHXXwwhN1AAWLCAFeYUzN+6WUHpe6hph3yJKgl1w5yAT3yMrFAAIiFScDkAELpjxrhQKodxPhVCIglkLA4iZhYt5BqLr3tAADisw/X
   </data>
  </layer>
 </map>
