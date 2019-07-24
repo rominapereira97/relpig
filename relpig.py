@@ -86,6 +86,8 @@ class MyGame(arcade.Window):
 
         self.winner = arcade.load_texture("images/winner.png")
 
+        self.background = arcade.load_texture("images/FONDO 3.png")
+
 
         # Used to keep track of our scrolling
         self.view_bottom = 0
@@ -261,6 +263,8 @@ class MyGame(arcade.Window):
         # Clear the screen to the background color
         arcade.start_render()
 
+        arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
+                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
         if self.level==7:
             arcade.draw_texture_winner(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.winner)
