@@ -21,7 +21,7 @@ GRID_PIXEL_SIZE = (SPRITE_PIXEL_SIZE * TILE_SCALING)
 # Movement speed of player, in pixels per frame
 PLAYER_MOVEMENT_SPEED = 5
 GRAVITY = 1
-PLAYER_JUMP_SPEED = 45
+PLAYER_JUMP_SPEED = 35 #"ADECUAR AL NIVEL"
 
 # How many pixels to keep as a minimum margin between the character
 # and the edge of the screen.
@@ -74,7 +74,7 @@ class MyGame(arcade.Window):
         self.end_of_map = 0
 
         # Level
-        self.level = 3
+        self.level = 1
 
         # Load sounds
         self.collect_coin_sound = arcade.load_sound("sounds/coin1.wav")
@@ -207,13 +207,13 @@ class MyGame(arcade.Window):
         # Name of the layer that has items for background
         background_layer_name = 'fondo'
         # Name of the layer that has items we shouldn't touch
-        dont_touch_layer_name = "notocar"
+        dont_touch_layer_name = "no tocar"
 
         # Map name
 
         if level==-1:
             map_name = 'game over.tmx'
-        map_name = f"nivel_1.tmx"
+        map_name = f"nivel_{self.level}.tmx"
         # Read in the tiled map
         my_map = arcade.read_tiled_map(map_name, TILE_SCALING)
 

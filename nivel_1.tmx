@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
- <tileset firstgid="1" name="mispatrones" tilewidth="128" tileheight="128" tilecount="17" columns="0">
+ <tileset firstgid="1" name="mispatrones" tilewidth="128" tileheight="128" tilecount="18" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="15">
    <image width="128" height="128" source="images/tiles/stoneLeft.png"/>
@@ -53,15 +53,18 @@
   <tile id="31">
    <image width="94" height="114" source="images/items/pluma.png"/>
   </tile>
+  <tile id="32">
+   <image width="128" height="128" source="images/tiles/spikes.png"/>
+  </tile>
  </tileset>
- <layer id="1" name="monedas" width="25" height="20" opacity="0.99">
-  <data encoding="base64" compression="zlib">
-   eJxjYKAOUEDCtFA/nIECA2ZYKGDBIxUoMBAOAwU8eCAAPdxCDzuwAXki1Skg0QoMpLmNFnagyxNrBykAn/0DDRSwYHrYMwroBwDKeQde
-  </data>
- </layer>
  <layer id="2" name="frente" width="25" height="20">
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="1" name="monedas" width="25" height="20" opacity="0.99">
+  <data encoding="base64" compression="zlib">
+   eJzt0ksKACAMQ8HcxHf/U7ot+F+oxToQugyESndgEh0qt6CSqNB4Azp5FY3slhx1YC6a+5HVjhW9fg/Q/l850fHVZbQBBZ4=
   </data>
  </layer>
  <layer id="3" name="fondo" width="25" height="20">
@@ -71,12 +74,12 @@
  </layer>
  <layer id="4" name="no tocar" width="25" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+   eJxjYBgFo2AUjIJRMAqGNpBAwuIkYmIBqebS2w4AIJoEDw==
   </data>
  </layer>
  <layer id="5" name="plataforma" width="25" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBg6QAwJkyJHbyCJAw+UHWIM2MMHXXwwhN1AAWLCAFeYUzN+6WUHpe6hph3yJKgl1w5yAT3yMrFAAIiFScDkAELpjxrhQKodxPhVCIglkLA4iZhYt5BqLr3tAADisw/X
+   eJwTY2BgEKMxHmlAEgceKDtwxcdoXCGAKAPxYUDL+MVlNrXtoNQ91LRDngS15NpBLqB1PiYFCACxMAmYHEAo/VEjLEi1gxi/CqHZIU4iJse/g9EOAPEEEFs=
   </data>
  </layer>
 </map>

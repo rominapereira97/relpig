@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
+ <tileset firstgid="1" name="patrones" tilewidth="128" tileheight="128" tilecount="15" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="1">
+   <image width="94" height="114" source="images/items/pluma.png"/>
+  </tile>
+  <tile id="2">
+   <image width="128" height="128" source="images/tiles/grassLeft.png"/>
+  </tile>
+  <tile id="3">
+   <image width="128" height="128" source="images/tiles/grassMid.png"/>
+  </tile>
+  <tile id="4">
+   <image width="128" height="128" source="images/tiles/grassRight.png"/>
+  </tile>
+  <tile id="5">
+   <image width="128" height="128" source="images/tiles/spikes.png"/>
+  </tile>
+  <tile id="6">
+   <image width="128" height="128" source="images/tiles/bridgeA.png"/>
+  </tile>
+  <tile id="7">
+   <image width="128" height="128" source="images/tiles/rock.png"/>
+  </tile>
+  <tile id="8">
+   <image width="128" height="128" source="images/tiles/brickBrown.png"/>
+  </tile>
+  <tile id="9">
+   <image width="128" height="128" source="images/tiles/grassCenter.png"/>
+  </tile>
+  <tile id="12">
+   <image width="128" height="128" source="images/tiles/water.png"/>
+  </tile>
+  <tile id="13">
+   <image width="128" height="128" source="images/tiles/waterTop_high.png"/>
+  </tile>
+  <tile id="14">
+   <image width="128" height="128" source="images/tiles/waterTop_low.png"/>
+  </tile>
+  <tile id="15">
+   <image width="128" height="128" source="images/tiles/boxCrate.png"/>
+  </tile>
+  <tile id="16">
+   <image width="128" height="128" source="images/tiles/bridgeB.png"/>
+  </tile>
+  <tile id="17">
+   <image width="128" height="128" source="images/tiles/cactus.png"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="monedas" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgYwDSA9sIwOXqp7RZaAFr6baDibTgDYtIjITWUpOtRgB2QGp6j8QMBQ8Gfg9195AIA2/gAMw==
+  </data>
+ </layer>
+ <layer id="2" name="no tocar" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMBQAOxSPAtoDUsOanWHg4wcAObAAMg==
+  </data>
+ </layer>
+ <layer id="3" name="fondo" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="4" name="frente" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMBQAOxSPRCBEojyp6ocDAABsVABX
+  </data>
+ </layer>
+ <layer id="5" name="plataforma" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJwTZGBgEKQxHmlAAAmTq3cg3UALs4nRQ0s3j3QgwIA/fAnJo6sZBZQDdjRMinpy5ClVP5QAB4lyzEDMgob5oRhdHBfGp54ViLmwYF4oxiZHjnoAxpoFaw==
+  </data>
+ </layer>
+</map>
