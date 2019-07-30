@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="125" tileheight="125" infinite="0" nextlayerid="5" nextobjectid="1">
+ <tileset firstgid="1" name="my_tiles" tilewidth="134" tileheight="190" tilecount="12" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="13">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/planetCenter.png"/>
+  </tile>
+  <tile id="14">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/planetMid.png"/>
+  </tile>
+  <tile id="18">
+   <image width="134" height="190" source="../PycharmProjects/ejemplojuego/images/alien/alienBlue_walk1.png"/>
+  </tile>
+  <tile id="20">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/items/star.png"/>
+  </tile>
+  <tile id="21">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/enemies/sawHalf.png"/>
+  </tile>
+  <tile id="22">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/signRight.png"/>
+  </tile>
+  <tile id="23">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/rock.png"/>
+  </tile>
+  <tile id="24">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/ladderMid.png"/>
+  </tile>
+  <tile id="25">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/mushroomRed.png"/>
+  </tile>
+  <tile id="26">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/planetHill_right.png"/>
+  </tile>
+  <tile id="27">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/planetHill_left.png"/>
+  </tile>
+  <tile id="28">
+   <image width="94" height="114" source="pluma.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="30" name="my_tiles" tilewidth="134" tileheight="190" tilecount="12" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="13">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/planetCenter.png"/>
+  </tile>
+  <tile id="14">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/planetMid.png"/>
+  </tile>
+  <tile id="18">
+   <image width="134" height="190" source="../PycharmProjects/ejemplojuego/images/alien/alienBlue_walk1.png"/>
+  </tile>
+  <tile id="20">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/items/star.png"/>
+  </tile>
+  <tile id="21">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/enemies/sawHalf.png"/>
+  </tile>
+  <tile id="22">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/signRight.png"/>
+  </tile>
+  <tile id="23">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/rock.png"/>
+  </tile>
+  <tile id="24">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/ladderMid.png"/>
+  </tile>
+  <tile id="25">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/mushroomRed.png"/>
+  </tile>
+  <tile id="26">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/planetHill_right.png"/>
+  </tile>
+  <tile id="27">
+   <image width="128" height="128" source="../PycharmProjects/ejemplojuego/images/tiles/planetHill_left.png"/>
+  </tile>
+  <tile id="28">
+   <image source="Pati.png"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="Plataforma" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF1AYSdDKfkD0SdHDLQAJZLJjagB8LlqGyHXw4MLn2YAsXXHaQYw/IPGzhgs8OUuyBmY8NELKDGHvwmU8NQGvzGfCYT8u8gGw3DA82QMjv1AgXQn7HJYctz+DCsLSMTx6bOAAOAgeN
+  </data>
+ </layer>
+ <layer id="2" name="Monedas" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="3" name="Fondo" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="4" name="No tocar" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+</map>
