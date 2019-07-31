@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
+ <tileset firstgid="1" name="mispatrones" tilewidth="128" tileheight="128" tilecount="13" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="94" height="114" source="images/items/pluma.png"/>
+  </tile>
+  <tile id="1">
+   <image width="128" height="128" source="images/tiles/planetLeft.png"/>
+  </tile>
+  <tile id="2">
+   <image width="128" height="128" source="images/tiles/planetMid.png"/>
+  </tile>
+  <tile id="3">
+   <image width="128" height="128" source="images/tiles/planetRight.png"/>
+  </tile>
+  <tile id="4">
+   <image width="128" height="128" source="images/tiles/planetCenter.png"/>
+  </tile>
+  <tile id="5">
+   <image width="128" height="128" source="images/tiles/lava.png"/>
+  </tile>
+  <tile id="6">
+   <image width="128" height="128" source="images/tiles/lavaTop_high.png"/>
+  </tile>
+  <tile id="7">
+   <image width="128" height="128" source="images/tiles/lavaTop_low.png"/>
+  </tile>
+  <tile id="8">
+   <image width="128" height="128" source="images/tiles/planetHalf.png"/>
+  </tile>
+  <tile id="9">
+   <image width="128" height="128" source="images/tiles/spikes.png"/>
+  </tile>
+  <tile id="10">
+   <image width="128" height="128" source="images/tiles/signExit.png"/>
+  </tile>
+  <tile id="11">
+   <image width="128" height="128" source="images/tiles/signLeft.png"/>
+  </tile>
+  <tile id="12">
+   <image width="128" height="128" source="images/tiles/signRight.png"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="monedas" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAfYBwiZo6CUTDQgJGB9mmbHnaMAuqA0XiiDRhu4QoAKUwACQ==
+  </data>
+ </layer>
+ <layer id="2" name="no tocar" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2BoA66BdsAoGHJgNM0MT8DFQDhuiY17DiimtlpkwAbF1FILAIvoAGs=
+  </data>
+ </layer>
+ <layer id="3" name="fondo" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYKA94KZALw8Q85KgnpMCu4YqICV8hjPgIUHtSA0zQv4mJQyJAZwMgztPUtu/1AYjNZ3iAqPhgR8AAP++AKU=
+  </data>
+ </layer>
+ <layer id="4" name="frente" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="5" name="plataforma" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgegBOKkdnkYGxmYpMbboCSMCMUjkMZkOvX0bBC9dtw9TM2MJTieLinSWIBMxaMT44ctaxYMAxgkyNHLQBV0gOC
+  </data>
+ </layer>
+</map>
