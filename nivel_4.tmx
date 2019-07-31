@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="2019.04.25" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="1">
+ <tileset firstgid="1" name="mispatrones" tilewidth="128" tileheight="128" tilecount="9" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="128" height="128" source="images/tiles/sandLeft.png"/>
+  </tile>
+  <tile id="1">
+   <image width="128" height="128" source="images/tiles/sandMid.png"/>
+  </tile>
+  <tile id="2">
+   <image width="128" height="128" source="images/tiles/sandRight.png"/>
+  </tile>
+  <tile id="3">
+   <image width="128" height="128" source="images/tiles/sandHalf.png"/>
+  </tile>
+  <tile id="4">
+   <image width="128" height="128" source="images/tiles/sandHalf_left.png"/>
+  </tile>
+  <tile id="5">
+   <image width="128" height="128" source="images/tiles/spikes.png"/>
+  </tile>
+  <tile id="6">
+   <image width="128" height="128" source="images/tiles/sandCenter.png"/>
+  </tile>
+  <tile id="7">
+   <image width="128" height="128" source="images/tiles/bridgeB.png"/>
+  </tile>
+  <tile id="8">
+   <image width="94" height="114" source="images/items/pluma.png"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="moneda" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGLmAEYiYaYmYgZqcDBgBIrADi
+  </data>
+ </layer>
+ <layer id="2" name="no tocar" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAqGBmCDYlqpH8oAACAAABk=
+  </data>
+ </layer>
+ <layer id="3" name="fondo" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="4" name="frente" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="5" name="platafroma" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzjYGBg4KAxpgRwQjE1zCDVHErtJQRYkDA1ACnuJSc8SHEvCwP1/TdYAanpi5JwJxSepKgdqoBa+RJXvFEj/LDFA6lmkVtuEQuGa1ohFG60DNOBBgCU6QI2
+  </data>
+ </layer>
+</map>
