@@ -74,7 +74,7 @@ class MyGame(arcade.Window):
         self.end_of_map = 0
 
         # Level
-        self.level = 6
+        self.level = 1
 
         # Load sounds
         self.collect_coin_sound = arcade.load_sound("sounds/coin1.wav")
@@ -183,14 +183,14 @@ class MyGame(arcade.Window):
 
         self.enemy_sprite.texture_change_distance = 20
 
-       # Posicion inicial del enemigo
-        self.enemy_sprite.center_x = PLAYER_START_X + 240
-        self.enemy_sprite.center_y = PLAYER_START_Y + 100
-
-        # Limite del enemigo
-        self.enemy_sprite.change_x = 2
-        self.enemy_sprite.boundary_left = PLAYER_START_X + 70
-        self.enemy_sprite.boundary_right = PLAYER_START_X + 400
+        if self.level == 1:
+           # Posicion inicial del enemigo
+            self.enemy_sprite.center_x = PLAYER_START_X + 250
+            self.enemy_sprite.center_y = PLAYER_START_Y + 100
+            # Limite del enemigo
+            self.enemy_sprite.change_x = 2
+            self.enemy_sprite.boundary_left =  150
+            self.enemy_sprite.boundary_right =  400
 
 
         self.enemy_list.append(self.enemy_sprite)
@@ -208,13 +208,14 @@ class MyGame(arcade.Window):
         background_layer_name = 'fondo'
         # Name of the layer that has items we shouldn't touch
         dont_touch_layer_name = "no tocar"
+        self.vida -= 1
+
 
         # Map name
 
-        if self.level==-1:
+        if level==-1:
             map_name = 'game over.tmx'
-        else:
-            map_name = f"nivel_{self.level}.tmx"
+        map_name = f"nivel_{self.level}.tmx"
         # Read in the tiled map
         my_map = arcade.read_tiled_map(map_name, TILE_SCALING)
 
@@ -264,6 +265,8 @@ class MyGame(arcade.Window):
         # Clear the screen to the background color
         arcade.start_render()
 
+        arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
+                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
         if self.level==7:
             arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.winner)
@@ -271,31 +274,35 @@ class MyGame(arcade.Window):
         elif self.vida==-1:
             arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
                                      SCREEN_WIDTH, SCREEN_HEIGHT, self.gameover)
+
         else:
-            arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
-                                          SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
-            # Draw our sprites
-            self.wall_list.draw()
-            self.background_list.draw()
-            self.wall_list.draw()
-            self.coin_list.draw()
-            self.dont_touch_list.draw()
-            self.player_list.draw()
-            self.foreground_list.draw()
-            self.enemy_list.draw()
+         # Draw our sprites
+         self.wall_list.draw()
+         self.background_list.draw()
+         self.wall_list.draw()
+         self.coin_list.draw()
+         self.dont_touch_list.draw()
+         self.player_list.draw()
+         self.foreground_list.draw()
+         self.enemy_list.draw()
 
-            # Draw our score on the screen, scrolling it with the viewport
-            score_text = f"Score: {self.score}"
-            arcade.draw_text(score_text, 20 + self.view_left, self.view_bottom + SCREEN_HEIGHT -40 ,
-                             arcade.csscolor.WHITE, 18)
+        # Draw our score on the screen, scrolling it with the viewport
+        score_text = f"Score: {self.score}"
+        arcade.draw_text(score_text, 20 + self.view_left, self.view_bottom + SCREEN_HEIGHT -40 ,
+                         arcade.csscolor.WHITE, 18)
 
-            # Draw our score on the screen, scrolling it with the viewport
-            vida_text = f"Vidas: {self.vida}"
-            arcade.draw_text(vida_text, 20 + self.view_left, self.view_bottom + SCREEN_HEIGHT - 20,
-                             arcade.csscolor.WHITE, 18)
+        # Draw our score on the screen, scrolling it with the viewport
+        vida_text = f"Vidas: {self.vida}"
+        arcade.draw_text(vida_text, 20 + self.view_left, self.view_bottom + SCREEN_HEIGHT - 20,
+                         arcade.csscolor.WHITE, 18)
 
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed. """
+        if self.vida<0:
+            self.level=1
+            self.setup(1)
+
+
         if key == arcade.key.UP or key == arcade.key.W:
             if self.physics_engine.can_jump():
                 self.player_sprite.change_y = PLAYER_JUMP_SPEED
